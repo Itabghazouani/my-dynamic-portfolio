@@ -7,7 +7,6 @@ import { SectionHeader } from '@/components';
 import Card from '@/components/Card';
 import { PROJECTS, TECHNOLOGIES } from '@/constants';
 
-
 const ProjectsSection = () => {
   return (
     <section className="pb-16 lg:py-24" id="projects">
@@ -28,7 +27,7 @@ const ProjectsSection = () => {
             >
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
-                  <div className="bg-gradient-to-r from-[#FF7043] to-[#00FFFF] inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
+                  <div className="bg-gradient-to-r from-[#00FFFF] to-[#B8E986] inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
                     {project.company && (
                       <>
                         <span>{project.company}</span>
@@ -57,7 +56,7 @@ const ProjectsSection = () => {
                         return (
                           <span
                             key={techKey}
-                            className="px-3 py-1 rounded-full text-xs md:text-sm bg-gradient-to-r from-[#FF7043] to-[#00FFFF] text-gray-900 font-semibold flex items-center gap-1"
+                            className="px-3 py-1 rounded-full text-xs md:text-sm bg-gradient-to-r from-[#00FFFF] to-[#B8E986] text-gray-900 font-semibold flex items-center gap-1"
                           >
                             <tech.icon className="w-4 h-4" />
                             {tech.title}

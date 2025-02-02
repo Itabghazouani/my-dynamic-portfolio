@@ -29,6 +29,7 @@ const config: Config = {
         'ping-large': 'ping-large 1s ease-in-out infinite',
         'move-left': 'move-left 1s linear infinite',
         'move-right': 'move-right 1s linear infinite',
+        'orbit-reverse': 'orbit-reverse linear infinite',
       },
       keyframes: {
         'ping-large': {
@@ -52,6 +53,10 @@ const config: Config = {
           '100%': {
             transform: 'translateX(0%)',
           },
+        },
+        'orbit-reverse': {
+          '0%': { transform: 'rotate(360deg)' },
+          '100%': { transform: 'rotate(0deg)' },
         },
       },
     },

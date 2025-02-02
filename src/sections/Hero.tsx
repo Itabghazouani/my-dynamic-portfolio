@@ -6,7 +6,7 @@ import Link from 'next/link';
 import ArrowDown from '@/assets/icons/arrow-down.svg';
 import grainImage from '@/assets/images/grain.jpg';
 import memojiImage from '@/assets/images/memoji-itab.png';
-import { OrbitSystem } from '@/components';
+import { OrbitSystem, ResumesButton } from '@/components';
 import { handleClick } from '@/lib/handleClick';
 
 const HeroSection = () => {
@@ -46,18 +46,23 @@ const HeroSection = () => {
           </p>
         </div>
         <div className="flex flex-col items-center mt-8 gap-4 md:flex-row justify-center">
-          <Link onClick={(e) => handleClick(e, '#projects')} href="#projects">
-            <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl">
-              <span className="font-semibold">Explore my work</span>
-              <ArrowDown className="size-4" />
-            </button>
+          <Link
+            onClick={(e) => handleClick(e, '#projects')}
+            href="#projects"
+            className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl hover:border-white/90 transition-colors cursor-pointer bg-transparent z-10"
+          >
+            <span className="font-semibold">Explore my work</span>
+            <ArrowDown className="size-4" />
           </Link>
-          <Link onClick={(e) => handleClick(e, '#contact')} href="#contact">
-            <button className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl">
-              <span>🫱🏻‍🫲🏽</span>
-              <span className="font-semibold">Let&apos;s connect</span>
-            </button>
+          <Link
+            onClick={(e) => handleClick(e, '#contact')}
+            href="#contact"
+            className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl hover:bg-white/80 transition-colors cursor-pointer z-10"
+          >
+            <span>🫱🏻‍🫲🏽</span>
+            <span className="font-semibold">Let&apos;s connect</span>
           </Link>
+          <ResumesButton />
         </div>
       </div>
     </div>

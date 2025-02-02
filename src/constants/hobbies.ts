@@ -2,20 +2,20 @@ import { Hobby } from '@/types/types';
 
 export const HOBBIES: Hobby[] = [
   {
-    title: 'Painting',
-    emoji: '🎨',
+    title: 'Piano',
+    emoji: '🎹',
     left: '5%',
     top: '5%',
   },
   {
-    title: 'Photography',
-    emoji: '📷',
+    title: 'Chess',
+    emoji: '♟️',
     left: '50%',
     top: '5%',
   },
   {
-    title: 'Hiking',
-    emoji: '🥾',
+    title: 'Football',
+    emoji: '⚽️',
     left: '35%',
     top: '40%',
   },
@@ -42,5 +42,11 @@ export const HOBBIES: Hobby[] = [
     emoji: '📚',
     left: '45%',
     top: '70%',
+  },
+  {
+    title: 'Padel',
+    emoji: '🎾',
+    left: '70%',
+    top: '80%',
   },
 ];

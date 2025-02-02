@@ -1,4 +1,4 @@
-import { ElementType } from 'react';
+import { ElementType, FunctionComponent, SVGProps } from 'react';
 
 import { StaticImageData } from 'next/image';
 
@@ -37,6 +37,14 @@ export type Hobby = {
 };
 
 export type FooterLink = {
-  title: string;
-  href: string;
+  platform: string;
+  url: string;
+  icon: FunctionComponent<SVGProps<SVGSVGElement>>;
+};
+
+export type Resume = {
+  language: string;
+  flag: string;
+  file: string;
+  fileName: string;
 };

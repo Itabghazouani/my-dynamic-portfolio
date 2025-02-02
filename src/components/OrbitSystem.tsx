@@ -19,7 +19,7 @@ const OrbitSystem = () => {
         spinDuration="3s"
         orbitDirection="counterclockwise"
       >
-        <SparkleIcon className="size-8 text-[#FF7043]/20" />
+        <SparkleIcon className="size-8 text-[#B8E986]/20" />
       </HeroOrbit>
       <HeroOrbit
         size={440}
@@ -30,7 +30,7 @@ const OrbitSystem = () => {
         spinDuration="3s"
         orbitDirection="counterclockwise"
       >
-        <SparkleIcon className="size-5 text-[#FF7043]/20" />
+        <SparkleIcon className="size-5 text-[#B8E986]/20" />
       </HeroOrbit>
       <HeroOrbit size={520} rotation={-41} shouldOrbit orbitDuration="34s">
         <div className="size-2 rounded-full bg-[#00FFFF]/20" />
@@ -68,7 +68,7 @@ const OrbitSystem = () => {
         <StarIcon className="size-8 text-[#00FFFF]" />
       </HeroOrbit>
       <HeroOrbit size={650} rotation={-5} shouldOrbit orbitDuration="42s">
-        <div className="size-2 rounded-full bg-[#FF7043]/20" />
+        <div className="size-2 rounded-full bg-[#B8E986]/20" />
       </HeroOrbit>
       <HeroOrbit
         size={710}
@@ -78,10 +78,10 @@ const OrbitSystem = () => {
         shouldSpin
         spinDuration="3s"
       >
-        <SparkleIcon className="size-14 text-[#FF7043]/20" />
+        <SparkleIcon className="size-14 text-[#B8E986]/20" />
       </HeroOrbit>
       <HeroOrbit size={720} rotation={85} shouldOrbit orbitDuration="46s">
-        <div className="size-3 rounded-full bg-[#FF7043]/20" />
+        <div className="size-3 rounded-full bg-[#B8E986]/20" />
       </HeroOrbit>
       <HeroOrbit
         size={800}
@@ -92,7 +92,7 @@ const OrbitSystem = () => {
         spinDuration="6s"
         orbitDirection="counterclockwise"
       >
-        <StarIcon className="size-28 text-[#FF7043]" />
+        <StarIcon className="size-28 text-[#B8E986]" />
       </HeroOrbit>
     </>
   );
