@@ -1,16 +1,66 @@
 import devisGeneratorImage from '@/assets/images/210blocks.png';
-import restaurantOrderingAppImage from '@/assets/images/burgerwallpaper.jpg';
-import caseCobraImage from '@/assets/images/casecobra.png';
-import codingJourneyImage from '@/assets/images/codingwallpaper.jpeg';
-import marvelHeroesImage from '@/assets/images/mheroes.jpeg';
+import caseCobraImage from '@/assets/images/casecobra.jpg'; //
+import codingJourneyImage from '@/assets/images/codingwallpaper.jpeg'; //
+import marvelHeroesImage from '@/assets/images/mheroes.jpeg'; //
+import realChatImage from '@/assets/images/realchatapp.jpg'; //
 import stringsAndThingsImage from '@/assets/images/rackets.jpg';
 import snapAndEatImage from '@/assets/images/restaurant_41.jpg';
-import secondLifeImage from '@/assets/images/secondlife.jpg';
-import shoppingList from '@/assets/images/shoppinglist.jpeg';
-import vanLifeImage from '@/assets/images/vanlife2.jpg';
+import secondLifeImage from '@/assets/images/secondlife.jpg'; //
+import shoppingList from '@/assets/images/shoppinglist.jpeg'; //
+import todoListImage from '@/assets/images/todolist.jpg'; //
+import vanLifeImage from '@/assets/images/vanlife.jpeg'; //
 import { Project } from '@/types/types';
 
 export const PROJECTS: Project[] = [
+  {
+    year: '2025',
+    title: 'Todo List',
+    description:
+      'A full-stack mobile-first ToDo application implementing the Eisenhower Matrix for task prioritization with productivity analytics, statistics dashboard, and calendar planning with recurring task functionality.',
+    technologies: [
+      'NEXTJS',
+      'TYPESCRIPT',
+      'REACT',
+      'TAILWINDCSS',
+      'DAISYUI',
+      'PRISMA',
+      'CLERK',
+      'ZUSTAND',
+      'RECHARTS',
+      'PWA',
+      'GITHUB',
+      'VERCEL',
+    ],
+    siteUrl: 'https://todo-list-matrix.vercel.app/',
+    githubUrl: 'https://github.com/Itabghazouani/todo-list',
+    image: todoListImage,
+    imageAlt:
+      'Task Matrix project interface showing Eisenhower prioritization grid and analytics dashboard',
+  },
+  {
+    year: '2025',
+    title: 'Real Chat App',
+    description:
+      'A real-time chat application built with MERN stack featuring live messaging, user authentication, media sharing, and responsive design.',
+    technologies: [
+      'MONGODB',
+      'EXPRESS',
+      'REACT',
+      'NODEJS',
+      'TYPESCRIPT',
+      'SOCKETIO',
+      'TAILWINDCSS',
+      'DAISYUI',
+      'JWT',
+      'CLOUDINARY',
+      'ZUSTAND',
+      'VITE',
+    ],
+    siteUrl: 'https://chat-app-react-c62q.onrender.com',
+    githubUrl: 'https://github.com/Itabghazouani/chat-app/',
+    image: realChatImage,
+    imageAlt: 'Real Chat application showing real-time messaging interface',
+  },
   {
     year: '2024',
     title: 'Second Life',
@@ -27,7 +77,7 @@ export const PROJECTS: Project[] = [
       'GITHUB',
       'VERCEL',
     ],
-    siteUrl: 'https://second-life.vercel.app/',
+    siteUrl: 'https://second-life-swart.vercel.app/',
     githubUrl: 'https://github.com/Itabghazouani/eshop-project',
     image: secondLifeImage,
     imageAlt: 'Second Life project Image',
@@ -45,12 +95,10 @@ export const PROJECTS: Project[] = [
       'SCSS',
       'GITHUB',
       'MANTINEUI',
-      'JSPDF',
-      'HTML2CANVAS',
-      'PAPAPARSE',
     ],
-    siteUrl: 'Private project - Not available for public access',
-    githubUrl: 'Private repository - Protected by NDA',
+    siteUrlUnavailableReason:
+      'Private project - Not available for public access',
+    githubUrlUnavailableReason: 'Private repository - Protected by NDA',
     image: devisGeneratorImage,
     imageAlt:
       'Invoice generator application interface showing form inputs and generated PDF preview',
@@ -115,17 +163,6 @@ export const PROJECTS: Project[] = [
     imageAlt: 'At Least I have My List',
   },
   {
-    title: 'Restaurant Ordering App',
-    year: '2023',
-    description:
-      'Burger Order App is a React application that enables users to customize and place orders for their favorite burgers, fully deployed on Netlify.',
-    technologies: ['HTML', 'CSS', 'JAVASCRIPT'],
-    siteUrl: 'https://restaurant-order-thegoat-burger.netlify.app/',
-    githubUrl: 'https://github.com/Itabghazouani/Restaurant-Ordering-App',
-    image: restaurantOrderingAppImage,
-    imageAlt: 'Restaurant Ordering App',
-  },
-  {
     title: 'My Coding Journey',
     year: '2023',
     description:
@@ -150,7 +187,7 @@ export const PROJECTS: Project[] = [
       'POSTGRESQL',
       'HEROKU',
     ],
-    siteUrl: 'Site no longer maintained - Bootcamp project"',
+    siteUrlUnavailableReason: 'Site no longer maintained - Bootcamp project',
     githubUrl: 'https://github.com/Itabghazouani/snap_and_eat',
     image: snapAndEatImage,
     imageAlt: 'Snap And Eat',
@@ -169,7 +206,7 @@ export const PROJECTS: Project[] = [
       'POSTGRESQL',
       'HEROKU',
     ],
-    siteUrl: 'Site no longer maintained - Bootcamp project',
+    siteUrlUnavailableReason: 'Site no longer maintained - Bootcamp project',
     githubUrl: 'https://github.com/Stephenmcg123/Strings_and_Things',
     image: stringsAndThingsImage,
     imageAlt: 'Strings and Things Image',

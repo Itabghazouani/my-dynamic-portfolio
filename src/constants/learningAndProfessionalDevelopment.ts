@@ -9,7 +9,7 @@ export const LEARNING_AND_PROFESIONNAL_DEVELOPMENT: LearningAndProfessionalDevel
       name: '210Blocks',
       year: '2024',
       description:
-        'I completed 210Blocks, a 10-week coding bootcamp, learning full-stack web development. I built a final project, a mobile app called 210Blocks, using a RESTful API, PostgreSQL, and Heroku.',
+        "During my internship at 210Blocks, I developed two key projects: an invoice generator application and the company's website v2. The invoice generator streamlines business operations with features like CSV data parsing, dynamic PDF generation, and lifecycle management. I also contributed to redesigning and implementing the company's new website, enhancing the user experience and modernizing the interface.",
       image: blocksImage,
     },
     {

@@ -7,7 +7,6 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 import bcnMap from '@/assets/images/bcnmap.png';
-import bookImage from '@/assets/images/book-cover.png';
 import smileMemoji from '@/assets/images/smiling-itab-memoji.png';
 import { Card, CardHeader, SectionHeader, TechnologyItems } from '@/components';
 import { HOBBIES, TECHNOLOGIES } from '@/constants';

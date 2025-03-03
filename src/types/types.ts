@@ -11,7 +11,9 @@ export type Project = {
   description: string;
   technologies: TechnologyKey[];
   siteUrl?: string;
+  siteUrlUnavailableReason?: string;
   githubUrl?: string;
+  githubUrlUnavailableReason?: string;
   image: StaticImageData;
   imageAlt: string;
 };

@@ -20,7 +20,7 @@ const ProjectsSection = () => {
           {PROJECTS.map((project, projectIndex) => (
             <Card
               key={project.title}
-              className="px-8 pt-8 pb-0 h-auto md:pt-12 md:px-10 lg:pt-16 lg:px-20 lg:h-[600px] relative lg:sticky"
+              className="px-8 pt-8 pb-0 h-auto md:pt-12 md:px-10 lg:pt-16 lg:px-20 lg:h-[620px] relative lg:sticky"
               style={{
                 top: `calc(64px + ${projectIndex * 40}px)`,
               }}
@@ -66,24 +66,47 @@ const ProjectsSection = () => {
                     </div>
                   </div>
 
-                  {(project.siteUrl || project.githubUrl) && (
-                    <div className="flex flex-col md:flex-row gap-4 mt-8">
-                      {project.siteUrl && (
+                  {(project.siteUrl ||
+                    project.githubUrl ||
+                    project.siteUrlUnavailableReason ||
+                    project.githubUrlUnavailableReason) && (
+                    <div
+                      className={`flex gap-4 mt-8 ${
+                        project.siteUrlUnavailableReason ||
+                        project.githubUrlUnavailableReason
+                          ? 'flex-col items-start'
+                          : 'flex-col md:flex-row'
+                      }`}
+                    >
+                      {project.siteUrl ? (
                         <Link href={project.siteUrl} target="_blank">
-                          <button className="bg-white text-gray-950 h-12 rounded-xl font-semibold inline-flex items-center justify-center gap-2 px-6">
+                          <button className="whitespace-nowrap bg-white text-gray-950 h-12 rounded-xl font-semibold inline-flex items-center justify-center gap-2 px-6">
                             <span>Visit Site</span>
                             <ArrowUpRightIcon className="size-4" />
                           </button>
                         </Link>
+                      ) : (
+                        project.siteUrlUnavailableReason && (
+                          <div className="whitespace-nowrap text-white/50 h-12 rounded-xl font-medium inline-flex items-center px-6 bg-white/5">
+                            {project.siteUrlUnavailableReason}
+                          </div>
+                        )
                       )}
-                      {project.githubUrl && (
+
+                      {project.githubUrl ? (
                         <Link href={project.githubUrl} target="_blank">
-                          <button className="border border-white/10 text-white h-12 rounded-xl font-semibold inline-flex items-center justify-center gap-2 px-6 hover:bg-white/5 transition-colors">
+                          <button className="whitespace-nowrap border border-white/10 text-white h-12 rounded-xl font-semibold inline-flex items-center justify-center gap-2 px-6 hover:bg-white/5 transition-colors">
                             <span>View Code</span>
                             <GithubIcon className="size-6" />
                             <ArrowUpRightIcon className="size-4" />
                           </button>
                         </Link>
+                      ) : (
+                        project.githubUrlUnavailableReason && (
+                          <div className="whitespace-nowrap text-white/50 h-12 rounded-xl font-medium inline-flex items-center px-6 bg-white/5">
+                            {project.githubUrlUnavailableReason}
+                          </div>
+                        )
                       )}
                     </div>
                   )}

@@ -1,7 +1,7 @@
 import { FooterLink } from '@/types/types';
 import LinkedinIcon from '@/assets/icons/linkedin.svg';
 import GithubIcon from '@/assets/icons/technologiesIcons/github.svg';
-import InstagramIcon from '@/assets/icons/instagram.svg';
+import DiscordIcon from '@/assets/icons/discord.svg';
 import XIcon from '@/assets/icons/x.svg';
 
 export const FOOTERLINKS: FooterLink[] = [
@@ -16,9 +16,9 @@ export const FOOTERLINKS: FooterLink[] = [
     icon: GithubIcon,
   },
   {
-    platform: 'Instagram',
-    url: 'https://www.instagram.com/itab_ghazouani',
-    icon: InstagramIcon,
+    platform: 'Discord',
+    url: 'https://www.discord.com/users/1107549032554975305',
+    icon: DiscordIcon,
   },
   {
     platform: 'X',
