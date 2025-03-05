@@ -1,14 +1,12 @@
-import devisGeneratorImage from '@/assets/images/210blocks.png';
-import caseCobraImage from '@/assets/images/casecobra.jpg'; //
-import codingJourneyImage from '@/assets/images/codingwallpaper.jpeg'; //
-import marvelHeroesImage from '@/assets/images/mheroes.jpeg'; //
-import realChatImage from '@/assets/images/realchatapp.jpg'; //
+import devisGeneratorImage from '@/assets/images/devisgenerator.jpg';
+import caseCobraImage from '@/assets/images/casecobra2.jpg';
+import marvelHeroesImage from '@/assets/images/mheroes2.jpg';
+import realChatImage from '@/assets/images/realchatapp2.jpg';
 import stringsAndThingsImage from '@/assets/images/rackets.jpg';
-import snapAndEatImage from '@/assets/images/restaurant_41.jpg';
-import secondLifeImage from '@/assets/images/secondlife.jpg'; //
-import shoppingList from '@/assets/images/shoppinglist.jpeg'; //
-import todoListImage from '@/assets/images/todolist.jpg'; //
-import vanLifeImage from '@/assets/images/vanlife.jpeg'; //
+import snapAndEatImage from '@/assets/images/snapandeat.jpg';
+import secondLifeImage from '@/assets/images/secondlife.jpg';
+import todoListImage from '@/assets/images/todolist2.jpg';
+import vanLifeImage from '@/assets/images/vanlife2.jpg';
 import { Project } from '@/types/types';
 
 export const PROJECTS: Project[] = [
@@ -89,8 +87,8 @@ export const PROJECTS: Project[] = [
       'Invoice generator application interface showing form inputs and generated PDF preview',
   },
   {
-    title: 'CaseCobra',
     year: '2024',
+    title: 'CaseCobra',
     description:
       'An app that allows users to upload personal images to create and purchase custom phone cases, integrating Stripe for payments and Kinde for authentication.',
     technologies: [
@@ -107,8 +105,8 @@ export const PROJECTS: Project[] = [
     imageAlt: 'Case Cobra',
   },
   {
-    title: 'Marvel Heroes',
     year: '2024',
+    title: 'Marvel Heroes',
     description:
       'A project titled Marvel Heroes List, built with Next.js, that displays detailed information about Marvel characters using an API.',
     technologies: ['HTML', 'TAILWINDCSS', 'TYPESCRIPT', 'NEXTJS', 'VERCEL'],
@@ -118,8 +116,8 @@ export const PROJECTS: Project[] = [
     imageAlt: 'Marvel Heroes List',
   },
   {
-    title: 'VanLife',
     year: '2024',
+    title: 'VanLife',
     description:
       'A React-based app, designed for users to easily browse and rent vans for their next adventure.',
     technologies: ['GITHUB', 'HTML', 'CSS', 'JAVASCRIPT', 'REACT'],
@@ -129,31 +127,9 @@ export const PROJECTS: Project[] = [
     imageAlt: 'Van Life',
   },
   {
-    title: 'At Least I have My List',
-    year: '2023',
-    description:
-      'A shopping list app, At Least I Have My List, created to simplify grocery trips and keep essentials organized."',
-    technologies: ['HTML', 'CSS', 'JAVASCRIPT', 'FIREBASE'],
-    siteUrl: 'https://at-least-i-have-my-list.netlify.app/',
-    githubUrl: 'https://github.com/Itabghazouani/Shopping-List-App',
-    image: shoppingList,
-    imageAlt: 'At Least I have My List',
-  },
-  {
-    title: 'My Coding Journey',
-    year: '2023',
-    description:
-      'A personal website showcasing my coding journey, featuring projects, skills, and progress made during the Scrimba course.',
-    technologies: ['HTML', 'CSS', 'JAVASCRIPT'],
-    siteUrl: 'https://my-coding-journey.netlify.app/',
-    githubUrl: 'https://github.com/Itabghazouani/my-coding-journey',
-    image: codingJourneyImage,
-    imageAlt: 'My Coding Journey',
-  },
-  {
     company: 'Le Wagon, Batch #845 Iberia',
-    title: 'Snap And Eat',
     year: '2022',
+    title: 'Snap And Eat',
     description:
       'A mobile app allowing users to search for restaurants based on dishes they crave, view a list of options, and book a table directly.',
     technologies: ['RUBYONRAILS', 'SCSS', 'JAVASCRIPT', 'POSTGRESQL', 'HEROKU'],
@@ -164,10 +140,10 @@ export const PROJECTS: Project[] = [
   },
   {
     company: 'Le Wagon, Batch #845 Iberia',
-    title: 'Strings and Things',
     year: '2022',
+    title: 'Strings and Things',
     description:
-      'A mobile app allowing users to search for restaurants based on dishes they crave, view a list of options, and book a table directly.',
+      'A mobile app allowing users to rent rackets (for tennis, padel, etc.) from other people in a peer-to-peer manner.',
     technologies: ['RUBYONRAILS', 'SCSS', 'JAVASCRIPT', 'POSTGRESQL', 'HEROKU'],
     siteUrlUnavailableReason: 'Site no longer maintained - Bootcamp project',
     githubUrl: 'https://github.com/Stephenmcg123/Strings_and_Things',
