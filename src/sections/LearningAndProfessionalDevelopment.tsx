@@ -16,8 +16,25 @@ const LearningAndProfessionalDevelopment = () => {
   const [selectedCard, setSelectedCard] = useState<string | null>(null);
   const [selectedCardPosition, setSelectedCardPosition] =
     useState<CardPosition>({ left: 0, top: 0 });
+  const [isMobile, setIsMobile] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<Map<string, HTMLDivElement>>(new Map());
+
+  useEffect(() => {
+    // Check if screen is mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Initial check
+    checkMobile();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', checkMobile);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -98,10 +115,12 @@ const LearningAndProfessionalDevelopment = () => {
                 }}
                 animate={{
                   opacity: 1,
-                  x: containerRef.current
+                  x: isMobile
+                    ? 0 // Center on mobile
+                    : containerRef.current
                     ? containerRef.current.offsetWidth / 2 - 224
                     : 0,
-                  width: '448px',
+                  width: isMobile ? '100%' : '448px',
                   zIndex: 50,
                 }}
                 exit={{
@@ -118,7 +137,10 @@ const LearningAndProfessionalDevelopment = () => {
                       <Card
                         key={`selected-${experience.name}`}
                         onClick={(e) => handleCardClick(e, experience.name)}
-                        className="w-full md:w-[448px] p-6 md:p-8 cursor-pointer select-none"
+                        className={`
+                          w-full mx-auto p-6 md:p-8 cursor-pointer select-none
+                          ${isMobile ? 'max-w-[90%]' : 'md:w-[448px]'}
+                        `}
                       >
                         <div className="flex gap-4 items-center">
                           <div className="size-14 bg-gray-700 inline-flex items-center justify-center rounded-full flex-shrink-0">
@@ -150,7 +172,9 @@ const LearningAndProfessionalDevelopment = () => {
           {/* Scrolling Cards */}
           <div
             className={`flex flex-none gap-8 pr-8 ${
-              !selectedCard ? 'animate-move-left [animation-duration:90s]' : ''
+              !selectedCard
+                ? 'animate-move-left md:[animation-duration:90s] [animation-duration:60s]'
+                : ''
             } hover:[animation-play-state:paused] transition-all duration-500`}
             style={{
               opacity: selectedCard ? 0 : 1,
@@ -165,7 +189,7 @@ const LearningAndProfessionalDevelopment = () => {
                     ref={(el) => setCardRef(el, experience.name, index)}
                     onClick={(e) => handleCardClick(e, experience.name)}
                     className={`
-                      flex-shrink-0 w-[320px] md:w-[448px] p-6 md:p-8 
+                      flex-shrink-0 w-[280px] md:w-[448px] p-6 md:p-8 
                       hover:-rotate-3 transition-all duration-300 
                       cursor-pointer select-none
                     `}

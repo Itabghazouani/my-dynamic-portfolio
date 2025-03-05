@@ -16,7 +16,7 @@ export const PROJECTS: Project[] = [
     year: '2025',
     title: 'Todo List',
     description:
-      'A full-stack mobile-first ToDo application implementing the Eisenhower Matrix for task prioritization with productivity analytics, statistics dashboard, and calendar planning with recurring task functionality.',
+      'Full-stack ToDo app featuring the Eisenhower Matrix, productivity analytics, and recurring task scheduling with calendar integration—all designed mobile-first.',
     technologies: [
       'NEXTJS',
       'TYPESCRIPT',
