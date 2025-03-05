@@ -72,7 +72,7 @@ export const PROJECTS: Project[] = [
     year: '2024',
     title: 'Devis Generator',
     description:
-      'Professional invoice generator application that streamlines the creation and management of business quotes. Features include dynamic PDF generation, CSV data parsing, and complete invoice lifecycle management with secure storage integration.',
+      'Professional invoice application for streamlined quote creation and management with dynamic PDF generation, CSV parsing, and secure invoice lifecycle tracking and storage.',
     technologies: [
       'TYPESCRIPT',
       'NEXTJS',
