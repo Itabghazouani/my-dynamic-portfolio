@@ -22,16 +22,18 @@ const ProjectsCarouselSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const carouselRef = useRef<CarouselInstance | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const checkMobile = () => {
+      const checkScreenSize = () => {
         setIsMobile(window.innerWidth < 640);
+        setIsDesktop(window.innerWidth >= 1024); // lg breakpoint (1024px)
       };
 
-      checkMobile();
-      window.addEventListener('resize', checkMobile);
-      return () => window.removeEventListener('resize', checkMobile);
+      checkScreenSize();
+      window.addEventListener('resize', checkScreenSize);
+      return () => window.removeEventListener('resize', checkScreenSize);
     }
   }, []);
 
@@ -119,20 +121,14 @@ const ProjectsCarouselSection = () => {
           >
             {PROJECTS.map((project) => (
               <div key={project.title} className="px-2 sm:px-4 pb-10">
-                <div
-                  className={`${
-                    isMobile
-                      ? 'h-[550px]'
-                      : 'h-[750px] md:h-[650px] lg:h-[600px]'
-                  }`}
-                >
-                  <Card className="px-4 sm:px-8 pt-6 sm:pt-8 pb-6 sm:pb-8 h-full md:pt-12 md:px-10 lg:pt-16 lg:px-20 relative mx-auto ">
+                <div className="h-[550px] md:h-[580px] lg:h-[600px]">
+                  <Card className="px-4 sm:px-8 pt-6 sm:pt-8 pb-6 sm:pb-8 h-full md:pt-12 md:px-10 lg:pt-16 lg:px-20 relative mx-auto">
                     <div
-                      className={`${
-                        !isMobile ? 'lg:grid lg:grid-cols-2 lg:gap-16' : ''
-                      }`}
+                      className={
+                        isDesktop ? 'lg:grid lg:grid-cols-2 lg:gap-16' : ''
+                      }
                     >
-                      <div className={`${!isMobile ? 'lg:pb-16' : ''}`}>
+                      <div className={isDesktop ? 'lg:pb-16' : ''}>
                         <div className="bg-gradient-to-r from-[#00FFFF] to-[#B8E986] inline-flex gap-1 sm:gap-2 font-bold uppercase tracking-widest text-[10px] xs:text-xs sm:text-sm text-transparent bg-clip-text">
                           {project.company && (
                             <>
@@ -148,7 +144,7 @@ const ProjectsCarouselSection = () => {
                         </h3>
                         <hr className="border-t-2 border-white/5 mt-3 sm:mt-4 md:mt-5" />
 
-                        <p className="text-white/75 mt-3 sm:mt-4 md:mt-5 text-xs sm:text-sm md:text-base line-clamp-5 sm:line-clamp-none">
+                        <p className="text-white/75 mt-3 sm:mt-4 md:mt-5 text-xs sm:text-sm md:text-base lg:text-left">
                           {project.description}
                         </p>
 
@@ -180,7 +176,7 @@ const ProjectsCarouselSection = () => {
                             className={`flex gap-3 sm:gap-4 mt-6 sm:mt-8 ${
                               project.siteUrlUnavailableReason ||
                               project.githubUrlUnavailableReason
-                                ? 'flex-col items-start'
+                                ? 'flex-col items-start md:grid md:grid-cols-2 md:gap-4'
                                 : 'flex-col md:flex-row items-start'
                             }`}
                           >
@@ -197,7 +193,7 @@ const ProjectsCarouselSection = () => {
                               </Link>
                             ) : (
                               project.siteUrlUnavailableReason && (
-                                <div className="text-white/50 text-[10px] xs:text-xs h-9 sm:h-10 md:h-12 rounded-lg sm:rounded-xl font-medium flex items-center px-2 sm:px-3 md:px-4 bg-white/5 w-full">
+                                <div className="text-white/50 text-[10px] xs:text-xs h-9 sm:h-10 md:h-12 rounded-lg sm:rounded-xl font-medium inline-flex items-center px-2 sm:px-3 md:px-4 bg-white/5 md:w-full">
                                   {project.siteUrlUnavailableReason}
                                 </div>
                               )
@@ -217,7 +213,7 @@ const ProjectsCarouselSection = () => {
                               </Link>
                             ) : (
                               project.githubUrlUnavailableReason && (
-                                <div className="text-white/50 text-[10px] xs:text-xs h-9 sm:h-10 md:h-12 rounded-lg sm:rounded-xl font-medium flex items-center px-2 sm:px-3 md:px-4 bg-white/5 w-full">
+                                <div className="text-white/50 text-[10px] xs:text-xs h-9 sm:h-10 md:h-12 rounded-lg sm:rounded-xl font-medium inline-flex items-center px-2 sm:px-3 md:px-4 bg-white/5 md:w-full">
                                   {project.githubUrlUnavailableReason}
                                 </div>
                               )
@@ -226,8 +222,8 @@ const ProjectsCarouselSection = () => {
                         )}
                       </div>
 
-                      {/* Conditionally render the image section based on screen size */}
-                      {!isMobile && (
+                      {/* Only render image for desktop (lg) screens */}
+                      {isDesktop && (
                         <div className="relative flex items-center justify-center">
                           <Image
                             src={project.image}
