@@ -55,18 +55,19 @@ const ResumesButton = () => {
       <button
         ref={buttonRef}
         onClick={() => setShowLanguages(!showLanguages)}
-        className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl hover:border-white/90 transition-colors cursor-pointer bg-transparent z-10"
+        className="inline-flex items-center gap-4 border border-white/15 px-6 h-12 rounded-xl hover:border-white/90 transition-colors cursor-pointer bg-transparent z-10"
         disabled={isDownloading}
       >
         <span className="font-semibold">
-          {isDownloading ? 'Downloading...' : 'Get my Resume ▾'}
+          {isDownloading ? 'Downloading...' : 'Get my Resume'}
         </span>
+        <span className="text-2xl">▴</span>
       </button>
 
       {showLanguages && (
         <div
           ref={dropdownRef}
-          className="absolute top-full left-0 mt-2 bg-gray-900 border border-gray-800 rounded-xl overflow-hidden shadow-lg z-20 min-w-[200px]"
+          className="absolute bottom-full left-0 mb-2 bg-gray-900 border border-gray-800 rounded-xl overflow-hidden shadow-lg z-20 min-w-[200px]"
         >
           {RESUMES.map((resume) => (
             <button

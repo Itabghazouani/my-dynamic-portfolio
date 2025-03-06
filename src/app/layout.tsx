@@ -14,8 +14,26 @@ const calistoga = Calistoga({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://my-dynamic-portfolio-bcn25.vercel.app'),
   title: 'My Animated Portfolio',
-  description: 'Created with the help of Frontend Tribe',
+  description:
+    'A dynamic and responsive portfolio showcasing my front-end development skills.',
+  openGraph: {
+    title: 'My Animated Portfolio',
+    description:
+      'A dynamic and responsive portfolio showcasing my front-end development skills.',
+    url: 'https://my-dynamic-portfolio-bcn25.vercel.app/',
+    siteName: 'My Animated Portfolio',
+    images: [
+      {
+        url: '/opengraph-dynamic-portfolio.png',
+        width: 1200,
+        height: 630,
+        alt: 'Preview of my Portfolio',
+      },
+    ],
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
