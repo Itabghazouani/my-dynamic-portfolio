@@ -41,7 +41,7 @@ const HeroSection = () => {
           </h1>
           <p className="mt-3 sm:mt-4 text-center text-white/60 text-sm sm:text-base md:text-lg px-2 sm:px-0">
             I bring designs to life as functional, high-performing web
-            applications. As a junior developer, I'm ready to take on new
+            applications. As a junior developer, I&apos;m ready to take on new
             challenges and make an impact!
           </p>
         </div>

@@ -21,18 +21,14 @@ const LearningAndProfessionalDevelopment = () => {
   const cardsRef = useRef<Map<string, HTMLDivElement>>(new Map());
 
   useEffect(() => {
-    // Check if screen is mobile
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
-    // Initial check
     checkMobile();
 
-    // Add event listener for window resize
     window.addEventListener('resize', checkMobile);
 
-    // Cleanup
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
@@ -63,7 +59,6 @@ const LearningAndProfessionalDevelopment = () => {
       return;
     }
 
-    // Get the card element and its position
     const cardElement = cardsRef.current.get(experienceName);
     if (cardElement) {
       const rect = cardElement.getBoundingClientRect();
@@ -72,7 +67,6 @@ const LearningAndProfessionalDevelopment = () => {
         top: 0,
       };
 
-      // Calculate relative position to the container
       setSelectedCardPosition({
         left: rect.left - containerRect.left,
         top: rect.top - containerRect.top,
@@ -104,7 +98,6 @@ const LearningAndProfessionalDevelopment = () => {
           ref={containerRef}
           className="mt-12 lg:mt-24 flex overflow-x-clip relative [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] py-4 -my-4"
         >
-          {/* Selected Card Overlay */}
           <AnimatePresence>
             {selectedCard && (
               <motion.div
@@ -116,7 +109,7 @@ const LearningAndProfessionalDevelopment = () => {
                 animate={{
                   opacity: 1,
                   x: isMobile
-                    ? 0 // Center on mobile
+                    ? 0
                     : containerRef.current
                     ? containerRef.current.offsetWidth / 2 - 224
                     : 0,
@@ -169,7 +162,6 @@ const LearningAndProfessionalDevelopment = () => {
             )}
           </AnimatePresence>
 
-          {/* Scrolling Cards */}
           <div
             className={`flex flex-none gap-8 pr-8 ${
               !selectedCard

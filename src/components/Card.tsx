@@ -25,7 +25,6 @@ const Card = forwardRef<HTMLDivElement, ComponentPropsWithoutRef<'div'>>(
   },
 );
 
-// Add display name for better debugging
 Card.displayName = 'Card';
 
 export default Card;

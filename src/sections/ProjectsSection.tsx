@@ -10,17 +10,11 @@ import ArrowUpRightIcon from '@/assets/icons/arrow-up-right.svg';
 import ArrowLeftIcon from '@/assets/icons/arrow-left.svg';
 import ArrowRightIcon from '@/assets/icons/arrow-right.svg';
 import GithubIcon from '@/assets/icons/technologiesIcons/github.svg';
-import { SectionHeader } from '@/components';
-import Card from '@/components/Card';
+import { Card, SectionHeader } from '@/components';
 import { PROJECTS, TECHNOLOGIES } from '@/constants';
-
-type CarouselInstance = {
-  setState: (state: { isMouseEntered: boolean }, callback?: () => void) => void;
-};
 
 const ProjectsCarouselSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const carouselRef = useRef<CarouselInstance | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
 
@@ -28,7 +22,7 @@ const ProjectsCarouselSection = () => {
     if (typeof window !== 'undefined') {
       const checkScreenSize = () => {
         setIsMobile(window.innerWidth < 640);
-        setIsDesktop(window.innerWidth >= 1024); // lg breakpoint (1024px)
+        setIsDesktop(window.innerWidth >= 1024);
       };
 
       checkScreenSize();
@@ -36,36 +30,6 @@ const ProjectsCarouselSection = () => {
       return () => window.removeEventListener('resize', checkScreenSize);
     }
   }, []);
-
-  const handlePrevClick = (onClickHandler: () => void): void => {
-    onClickHandler();
-
-    // Reset the autoplay timer by toggling autoPlay off and on
-    if (carouselRef.current) {
-      carouselRef.current.setState({ isMouseEntered: true }, () => {
-        setTimeout(() => {
-          if (carouselRef.current) {
-            carouselRef.current.setState({ isMouseEntered: false });
-          }
-        }, 0);
-      });
-    }
-  };
-
-  const handleNextClick = (onClickHandler: () => void): void => {
-    onClickHandler();
-
-    // Reset the autoplay timer by toggling autoPlay off and on
-    if (carouselRef.current) {
-      carouselRef.current.setState({ isMouseEntered: true }, () => {
-        setTimeout(() => {
-          if (carouselRef.current) {
-            carouselRef.current.setState({ isMouseEntered: false });
-          }
-        }, 0);
-      });
-    }
-  };
 
   return (
     <section className="pb-16 lg:py-24">
@@ -78,13 +42,12 @@ const ProjectsCarouselSection = () => {
 
         <div className="mt-8 sm:mt-10 md:mt-20" id="projects">
           <Carousel
-            ref={carouselRef as any}
             showArrows={true}
             infiniteLoop={true}
             showThumbs={false}
             showStatus={false}
             autoPlay={true}
-            interval={5000}
+            interval={1000}
             stopOnHover={true}
             swipeable={true}
             emulateTouch={true}
@@ -98,7 +61,7 @@ const ProjectsCarouselSection = () => {
               hasPrev && (
                 <button
                   type="button"
-                  onClick={() => handlePrevClick(onClickHandler)}
+                  onClick={onClickHandler}
                   title={label}
                   className="absolute left-0 sm:left-2 md:left-4 lg:left-8 z-10 p-2 -translate-y-1/2 top-1/2 group"
                 >
@@ -110,7 +73,7 @@ const ProjectsCarouselSection = () => {
               hasNext && (
                 <button
                   type="button"
-                  onClick={() => handleNextClick(onClickHandler)}
+                  onClick={onClickHandler}
                   title={label}
                   className="absolute right-0 sm:right-2 md:right-4 lg:right-8 z-10 p-2 -translate-y-1/2 top-1/2 group"
                 >
@@ -239,29 +202,11 @@ const ProjectsCarouselSection = () => {
             ))}
           </Carousel>
 
-          {/* Custom Indicators */}
           <div className="flex justify-center mt-3 sm:mt-6 md:mt-8">
             {PROJECTS.map((_, index) => (
               <button
                 key={index}
-                onClick={() => {
-                  setCurrentSlide(index);
-                  // Also reset autoplay timer when clicking indicators
-                  if (carouselRef.current) {
-                    carouselRef.current.setState(
-                      { isMouseEntered: true },
-                      () => {
-                        setTimeout(() => {
-                          if (carouselRef.current) {
-                            carouselRef.current.setState({
-                              isMouseEntered: false,
-                            });
-                          }
-                        }, 0);
-                      },
-                    );
-                  }
-                }}
+                onClick={() => setCurrentSlide(index)}
                 className={`w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-3 md:h-3 mx-0.5 sm:mx-1 rounded-full transition-colors ${
                   currentSlide === index
                     ? 'bg-gradient-to-r from-[#00FFFF] to-[#B8E986]'
