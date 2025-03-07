@@ -47,7 +47,7 @@ const ProjectsCarouselSection = () => {
             showThumbs={false}
             showStatus={false}
             autoPlay={true}
-            interval={1000}
+            interval={6000}
             stopOnHover={true}
             swipeable={true}
             emulateTouch={true}
