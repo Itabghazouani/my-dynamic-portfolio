@@ -23,7 +23,7 @@ export const LEARNING_AND_PROFESIONNAL_DEVELOPMENT: LearningAndProfessionalDevel
       name: 'Le Wagon - Full-Stack Web Development Bootcamp Batch #845 Iberia',
       year: '2022',
       description:
-        'I completed the Full-Stack Web Development Bootcamp at Le Wagon, mastering Ruby on Rails, JavaScript, React, and SQL. The program covered both front-end and back-end development, including database design, authentication, and API integration, preparing me to build end-to-end web applications.',
+        'I completed the Full-Stack Web Development Bootcamp at Le Wagon, learning Ruby on Rails, JavaScript, PostgreSQL, and SCSS to build full-stack web applications. Gained hands-on experience with APIs, authentication, database management, and agile development, working in teams on real-world projects.',
       image: leWagonImage,
     },
   ];
