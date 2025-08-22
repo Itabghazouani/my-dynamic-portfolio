@@ -9,7 +9,7 @@ export const LEARNING_AND_PROFESIONNAL_DEVELOPMENT: LearningAndProfessionalDevel
       name: '210Blocks',
       year: '2024',
       description:
-        "During my internship at 210Blocks, I developed two key projects: an invoice generator application and the company's website v2. The invoice generator streamlines business operations with features like CSV data parsing, dynamic PDF generation, and lifecycle management. I also contributed to redesigning and implementing the company's new website, enhancing the user experience and modernizing the interface.",
+        'During my first experience as a full-stack developer, I had to quickly learn a new framework from scratch before joining a small team of experienced developers. I contributed to two main projects: an invoice generator application and the company’s website v2. The invoice generator streamlined business operations with features such as CSV data parsing, dynamic PDF generation, and lifecycle management. I also played a key role in redesigning and implementing the company’s new website, enhancing the user experience and modernizing the interface.',
       image: blocksImage,
     },
     {
